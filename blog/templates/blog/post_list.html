@@ -1,19 +1,13 @@
-<!DOCTYPE html>
-<html>
-	<head>
-        <title>Le blog de Guillaume Mathieu</title>
-	</head>
+{% extends 'blog/base.html' %}
 
-	<body>
-	<header>
-            <h1><a href="/">Comment se connecter aux différents services de la fac Lyon 1</a></h1>
-        </header>
-
-        {% for post in posts %}
-	    <article>
-		<time>Publié : {{post.published_date}}</time>
-		<h2><a href="">{{post.title}}</a></h2>
-		<p>{{post.text|linebreaksbr}}</p>
-	    </article>
-	{%endfor%}
-</html>
+{% block content %}
+	{% for post in posts %}
+		<article class="post">
+			<time class="date">
+				{{ post.published_date }}
+			</time>
+			<h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+			<p>{{ post.text|linebreaksbr }}</p>
+		</article>
+	{% endfor %}
+{% endblock %}
