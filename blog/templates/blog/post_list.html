@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <title>Le blog de Guillaume Mathieu</title>
+	</head>
+
+	<body>
+	<header>
+            <h1><a href="/">Comment se connecter aux différents services de la fac Lyon 1</a></h1>
+        </header>
+
+        {% for post in posts %}
+	    <article>
+		<time>Publié : {{post.published_date}}</time>
+		<h2><a href="">{{post.title}}</a></h2>
+		<p>{{post.text|linebreaksbr}}</p>
+	    </article>
+	{%endfor%}
+</html>
