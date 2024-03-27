@@ -13,8 +13,4 @@ urlpatterns = [
     path('post/new/', views.post_new, name='post_new'),
     path('post/<int:pk>/edit/', views.post_edit, name='post_edit'),
     path('post/<pk>/remove/', views.post_remove, name='post_remove'),
-<<<<<<< HEAD
 ]
-=======
-]
->>>>>>> 0ecad25910be41aefd8334ba419c9accc9ffd611
